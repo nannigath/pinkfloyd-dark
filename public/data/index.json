@@ -1,0 +1,103 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-02-15T05:41:39.716Z",
+  "album": {
+    "title": "The Dark Side of the Moon",
+    "slug": "dark-side-of-the-moon",
+    "coverImage": "/assets/images/artwork/prism-cover.webp"
+  },
+  "tracks": [
+    {
+      "id": 1,
+      "slug": "speak-to-me",
+      "title": "Speak to Me",
+      "duration": "1:30"
+    },
+    {
+      "id": 2,
+      "slug": "breathe",
+      "title": "Breathe",
+      "duration": "2:43"
+    },
+    {
+      "id": 3,
+      "slug": "on-the-run",
+      "title": "On the Run",
+      "duration": "3:30"
+    },
+    {
+      "id": 4,
+      "slug": "time",
+      "title": "Time",
+      "duration": "6:53"
+    },
+    {
+      "id": 5,
+      "slug": "the-great-gig-in-the-sky",
+      "title": "The Great Gig in the Sky",
+      "duration": "4:36"
+    },
+    {
+      "id": 6,
+      "slug": "money",
+      "title": "Money",
+      "duration": "6:22"
+    },
+    {
+      "id": 7,
+      "slug": "us-and-them",
+      "title": "Us and Them",
+      "duration": "7:49"
+    },
+    {
+      "id": 8,
+      "slug": "any-colour-you-like",
+      "title": "Any Colour You Like",
+      "duration": "3:24"
+    },
+    {
+      "id": 9,
+      "slug": "brain-damage",
+      "title": "Brain Damage",
+      "duration": "3:46"
+    },
+    {
+      "id": 10,
+      "slug": "eclipse",
+      "title": "Eclipse",
+      "duration": "2:03"
+    }
+  ],
+  "themes": [
+    {
+      "slug": "time",
+      "name": "Time",
+      "colorAccent": "#FF6B6B"
+    },
+    {
+      "slug": "death",
+      "name": "Death & Mortality",
+      "colorAccent": "#4ECDC4"
+    },
+    {
+      "slug": "money",
+      "name": "Money & Greed",
+      "colorAccent": "#45B7D1"
+    },
+    {
+      "slug": "mental-health",
+      "name": "Mental Health",
+      "colorAccent": "#96CEB4"
+    },
+    {
+      "slug": "conflict",
+      "name": "Conflict & War",
+      "colorAccent": "#FFEAA7"
+    }
+  ],
+  "stats": {
+    "totalTracks": 10,
+    "totalThemes": 5,
+    "totalArtwork": 3
+  }
+}

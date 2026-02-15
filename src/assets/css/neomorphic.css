@@ -1,0 +1,339 @@
+/* ==========================================================================
+   Neomorphic Design System
+   Soft shadows, extruded elements, and tactile interactions
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Neomorphic Base Components
+   -------------------------------------------------------------------------- */
+
+/* Extruded element (convex) - appears to rise from surface */
+.neo-convex {
+  background: var(--color-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-convex);
+  transition: all var(--transition-normal);
+}
+
+.neo-convex:hover {
+  box-shadow: var(--shadow-out);
+  transform: translateY(-2px);
+}
+
+.neo-convex:active {
+  box-shadow: var(--shadow-in);
+  transform: translateY(0);
+}
+
+/* Pressed element (concave) - appears pressed into surface */
+.neo-concave {
+  background: var(--color-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-concave);
+}
+
+/* Flat element with outer shadow */
+.neo-flat {
+  background: var(--color-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-out);
+}
+
+/* Inset element */
+.neo-inset {
+  background: var(--color-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-in);
+}
+
+/* --------------------------------------------------------------------------
+   Neomorphic Buttons
+   -------------------------------------------------------------------------- */
+.neo-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3) var(--space-6);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-text);
+  background: var(--color-bg);
+  border: none;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-convex);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.neo-button:hover {
+  box-shadow: var(--shadow-out);
+  transform: translateY(-2px);
+}
+
+.neo-button:active {
+  box-shadow: var(--shadow-in);
+  transform: translateY(0);
+}
+
+.neo-button:focus-visible {
+  outline: 3px solid var(--color-accent-blue);
+  outline-offset: 3px;
+}
+
+/* Button variations */
+.neo-button--primary {
+  color: white;
+  background: linear-gradient(135deg, var(--color-accent-blue), var(--color-accent-teal));
+}
+
+.neo-button--accent {
+  color: white;
+  background: linear-gradient(135deg, var(--color-accent-purple), var(--color-accent-pink));
+}
+
+/* --------------------------------------------------------------------------
+   Neomorphic Cards
+   -------------------------------------------------------------------------- */
+.neo-card {
+  background: var(--color-bg);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-out);
+  transition: all var(--transition-normal);
+}
+
+.neo-card:hover {
+  box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.15), -12px -12px 24px rgba(255, 255, 255, 0.7);
+  transform: translateY(-4px);
+}
+
+[data-theme="dark"] .neo-card:hover {
+  box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.4), -12px -12px 24px rgba(255, 255, 255, 0.05);
+}
+
+/* --------------------------------------------------------------------------
+   Neomorphic Form Elements
+   -------------------------------------------------------------------------- */
+.neo-input {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  background: var(--color-bg);
+  border: none;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-in);
+  transition: all var(--transition-fast);
+}
+
+.neo-input:focus {
+  outline: none;
+  box-shadow: var(--shadow-concave), 0 0 0 3px var(--color-accent-blue);
+}
+
+.neo-input::placeholder {
+  color: var(--color-text);
+  opacity: 0.5;
+}
+
+/* --------------------------------------------------------------------------
+   Neomorphic Toggle Switch
+   -------------------------------------------------------------------------- */
+.neo-toggle {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 32px;
+}
+
+.neo-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.neo-toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-bg);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-in);
+  transition: all var(--transition-normal);
+}
+
+.neo-toggle-slider::before {
+  position: absolute;
+  content: "";
+  height: 24px;
+  width: 24px;
+  left: 4px;
+  bottom: 4px;
+  background: var(--color-bg);
+  border-radius: 50%;
+  box-shadow: var(--shadow-out);
+  transition: all var(--transition-normal);
+}
+
+.neo-toggle input:checked + .neo-toggle-slider {
+  background: linear-gradient(135deg, var(--color-accent-blue), var(--color-accent-teal));
+}
+
+.neo-toggle input:checked + .neo-toggle-slider::before {
+  transform: translateX(28px);
+}
+
+.neo-toggle input:focus-visible + .neo-toggle-slider {
+  outline: 3px solid var(--color-accent-blue);
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Skeleton Loading Screens (Neomorphic)
+   -------------------------------------------------------------------------- */
+.neo-skeleton {
+  background: var(--color-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-in);
+  position: relative;
+  overflow: hidden;
+}
+
+.neo-skeleton::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes skeleton-pulse {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .neo-skeleton::after {
+    animation: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Progress/Loading Indicators
+   -------------------------------------------------------------------------- */
+.neo-progress {
+  width: 100%;
+  height: 12px;
+  background: var(--color-bg);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-in);
+  overflow: hidden;
+}
+
+.neo-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-accent-blue), var(--color-accent-teal));
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-out);
+  transition: width var(--transition-normal);
+}
+
+/* --------------------------------------------------------------------------
+   Neomorphic Navigation
+   -------------------------------------------------------------------------- */
+.neo-nav {
+  display: flex;
+  gap: var(--space-2);
+  padding: var(--space-2);
+  background: var(--color-bg);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-out);
+}
+
+.neo-nav-item {
+  padding: var(--space-3) var(--space-4);
+  color: var(--color-text);
+  text-decoration: none;
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-fast);
+}
+
+.neo-nav-item:hover,
+.neo-nav-item:focus {
+  background: var(--color-bg);
+  box-shadow: var(--shadow-convex);
+  text-decoration: none;
+}
+
+.neo-nav-item.active {
+  box-shadow: var(--shadow-in);
+  color: var(--color-accent-blue);
+}
+
+/* --------------------------------------------------------------------------
+   Audio Player Controls (Neomorphic)
+   -------------------------------------------------------------------------- */
+.neo-audio-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background: var(--color-bg);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-out);
+}
+
+.neo-audio-button {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg);
+  border: none;
+  border-radius: 50%;
+  box-shadow: var(--shadow-convex);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  color: var(--color-text);
+}
+
+.neo-audio-button:hover {
+  box-shadow: var(--shadow-out);
+  transform: scale(1.05);
+}
+
+.neo-audio-button:active {
+  box-shadow: var(--shadow-in);
+  transform: scale(0.95);
+}
+
+.neo-audio-button--large {
+  width: 64px;
+  height: 64px;
+  font-size: var(--font-size-xl);
+}
+
+.neo-audio-button--play {
+  background: linear-gradient(135deg, var(--color-accent-blue), var(--color-accent-teal));
+  color: white;
+}

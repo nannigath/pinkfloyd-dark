@@ -1,0 +1,46 @@
+{
+  "name": "pink-floyd-dsotm-website",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run build:data && vite build",
+    "build:data": "node tools/build-db.js",
+    "preview": "vite preview",
+    "audio:convert": "node tools/convert-audio.js",
+    "images:optimize": "node tools/optimize-images.js",
+    "db:init": "node tools/init-db.js",
+    "db:seed": "sqlite3 data/database.sqlite < data/seed.sql",
+    "db:validate": "node tools/validate-db.js",
+    "audio:validate": "node tools/validate-audio.js",
+    "test": "npm run test:unit && npm run test:a11y && npm run test:performance",
+    "test:unit": "vitest run",
+    "test:e2e": "playwright test",
+    "test:a11y": "node tools/validate-a11y.js",
+    "test:performance": "node tools/validate-performance.js",
+    "lighthouse": "lighthouse",
+    "lint": "eslint src/",
+    "format": "prettier --write src/",
+    "typecheck": "tsc --noEmit",
+    "validate": "npm run lint && npm run typecheck && npm run audio:validate && npm run test",
+    "predeploy": "npm run validate && npm run build"
+  },
+  "devDependencies": {
+    "@axe-core/cli": "^4.10.0",
+    "@eslint/js": "^9.39.2",
+    "@playwright/test": "^1.50.0",
+    "better-sqlite3": "^12.0.0",
+    "eslint": "^9.0.0",
+    "globals": "^17.3.0",
+    "lighthouse": "^12.0.0",
+    "prettier": "^3.5.0",
+    "sharp": "^0.33.0",
+    "typescript": "^5.7.0",
+    "vite": "^6.0.0",
+    "vitest": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,307 @@
+{
+  "tracks": [
+    {
+      "id": 1,
+      "trackNumber": 1,
+      "title": "Speak to Me",
+      "duration": "1:30",
+      "composers": [
+        "Nick Mason"
+      ],
+      "themes": [
+        "madness"
+      ],
+      "lyricsExcerpt": "I've been mad for fucking years...",
+      "musicalAnalysis": "An instrumental collage featuring heartbeat sounds, cash registers, and spoken word samples that introduces the album's themes.",
+      "culturalSignificance": "Sets the stage for the album's exploration of mental health and the pressures of modern life.",
+      "audioPreviewFilename": "track-01-speak-to-me-preview.mp3",
+      "waveformData": [
+        0.1,
+        0.3,
+        0.5,
+        0.2,
+        0.4,
+        0.6,
+        0.3,
+        0.5
+      ],
+      "createdAt": "2026-02-14 18:49:41",
+      "audioPreviewUrl": "/assets/audio/track-01-speak-to-me-preview.mp3"
+    },
+    {
+      "id": 2,
+      "trackNumber": 2,
+      "title": "Breathe",
+      "duration": "2:43",
+      "composers": [
+        "David Gilmour",
+        "Richard Wright",
+        "Roger Waters"
+      ],
+      "themes": [
+        "time",
+        "life"
+      ],
+      "lyricsExcerpt": "Breathe, breathe in the air...",
+      "musicalAnalysis": "A gentle acoustic ballad featuring David Gilmour's slide guitar work and Richard Wright's atmospheric keyboards.",
+      "culturalSignificance": "Emphasizes living in the moment and not letting life slip away.",
+      "audioPreviewFilename": "track-02-breathe-preview.mp3",
+      "waveformData": [
+        0.2,
+        0.4,
+        0.3,
+        0.5,
+        0.4,
+        0.6,
+        0.5,
+        0.4
+      ],
+      "createdAt": "2026-02-14 18:49:41",
+      "audioPreviewUrl": "/assets/audio/track-02-breathe-preview.mp3"
+    },
+    {
+      "id": 3,
+      "trackNumber": 3,
+      "title": "On the Run",
+      "duration": "3:30",
+      "composers": [
+        "Roger Waters",
+        "David Gilmour"
+      ],
+      "themes": [
+        "travel",
+        "anxiety"
+      ],
+      "lyricsExcerpt": "Live for today, gone tomorrow...",
+      "musicalAnalysis": "An experimental electronic piece using the EMS Synthi AKS synthesizer to create a sense of travel and anxiety.",
+      "culturalSignificance": "Represents the stress and anxiety of modern travel and life pace.",
+      "audioPreviewFilename": "track-03-on-the-run-preview.mp3",
+      "waveformData": [
+        0.3,
+        0.5,
+        0.7,
+        0.4,
+        0.6,
+        0.8,
+        0.5,
+        0.7
+      ],
+      "createdAt": "2026-02-14 18:49:41",
+      "audioPreviewUrl": "/assets/audio/track-03-on-the-run-preview.mp3"
+    },
+    {
+      "id": 4,
+      "trackNumber": 4,
+      "title": "Time",
+      "duration": "6:53",
+      "composers": [
+        "David Gilmour",
+        "Richard Wright",
+        "Roger Waters",
+        "Nick Mason"
+      ],
+      "themes": [
+        "time",
+        "life",
+        "death"
+      ],
+      "lyricsExcerpt": "Ticking away the moments that make up a dull day...",
+      "musicalAnalysis": "Features a distinctive drum fill by Nick Mason, multiple time signature changes, and one of Gilmour's most celebrated guitar solos.",
+      "culturalSignificance": "A meditation on the passage of time and the realization that life is shorter than we think.",
+      "audioPreviewFilename": "track-04-time-preview.mp3",
+      "waveformData": [
+        0.4,
+        0.6,
+        0.5,
+        0.7,
+        0.6,
+        0.8,
+        0.7,
+        0.6
+      ],
+      "createdAt": "2026-02-14 18:49:41",
+      "audioPreviewUrl": "/assets/audio/track-04-time-preview.mp3"
+    },
+    {
+      "id": 5,
+      "trackNumber": 5,
+      "title": "The Great Gig in the Sky",
+      "duration": "4:36",
+      "composers": [
+        "Richard Wright",
+        "Clare Torry"
+      ],
+      "themes": [
+        "death",
+        "afterlife"
+      ],
+      "lyricsExcerpt": "And I am not frightened of dying...",
+      "musicalAnalysis": "Features Clare Torry's powerful wordless vocals, recorded in a single take, over Richard Wright's haunting piano chords.",
+      "culturalSignificance": "Explores mortality and what lies beyond death, without taking a definitive stance.",
+      "audioPreviewFilename": "track-05-the-great-gig-in-the-sky-preview.mp3",
+      "waveformData": [
+        0.5,
+        0.7,
+        0.6,
+        0.8,
+        0.7,
+        0.9,
+        0.8,
+        0.7
+      ],
+      "createdAt": "2026-02-14 18:49:41",
+      "audioPreviewUrl": "/assets/audio/track-05-the-great-gig-in-the-sky-preview.mp3"
+    },
+    {
+      "id": 6,
+      "trackNumber": 6,
+      "title": "Money",
+      "duration": "6:22",
+      "composers": [
+        "Roger Waters"
+      ],
+      "themes": [
+        "money",
+        "greed",
+        "capitalism"
+      ],
+      "lyricsExcerpt": "Money, get away...",
+      "musicalAnalysis": "Famous for its 7/4 time signature, tape loop of cash registers and coins, and saxophone solo by Dick Parry.",
+      "culturalSignificance": "A satirical critique of materialism and the corrupting influence of wealth.",
+      "audioPreviewFilename": "track-06-money-preview.mp3",
+      "waveformData": [
+        0.6,
+        0.8,
+        0.7,
+        0.9,
+        0.8,
+        1,
+        0.9,
+        0.8
+      ],
+      "createdAt": "2026-02-14 18:49:41",
+      "audioPreviewUrl": "/assets/audio/track-06-money-preview.mp3"
+    },
+    {
+      "id": 7,
+      "trackNumber": 7,
+      "title": "Us and Them",
+      "duration": "7:49",
+      "composers": [
+        "Richard Wright",
+        "Roger Waters"
+      ],
+      "themes": [
+        "conflict",
+        "war",
+        "division"
+      ],
+      "lyricsExcerpt": "Us and them, and after all we're only ordinary men...",
+      "musicalAnalysis": "A haunting ballad featuring Richard Wright's piano and another saxophone performance by Dick Parry.",
+      "culturalSignificance": "Addresses human conflict, war, and the arbitrary divisions between people.",
+      "audioPreviewFilename": "track-07-us-and-them-preview.mp3",
+      "waveformData": [
+        0.5,
+        0.7,
+        0.6,
+        0.8,
+        0.7,
+        0.9,
+        0.8,
+        0.7
+      ],
+      "createdAt": "2026-02-14 18:49:41",
+      "audioPreviewUrl": "/assets/audio/track-07-us-and-them-preview.mp3"
+    },
+    {
+      "id": 8,
+      "trackNumber": 8,
+      "title": "Any Colour You Like",
+      "duration": "3:24",
+      "composers": [
+        "David Gilmour",
+        "Richard Wright",
+        "Nick Mason"
+      ],
+      "themes": [
+        "choice",
+        "illusion"
+      ],
+      "lyricsExcerpt": "(Instrumental)",
+      "musicalAnalysis": "An instrumental jam showcasing the band's musical interplay and synthesizer experimentation.",
+      "culturalSignificance": "Represents the illusion of choice in a consumer-driven society.",
+      "audioPreviewFilename": "track-08-any-colour-you-like-preview.mp3",
+      "waveformData": [
+        0.4,
+        0.6,
+        0.5,
+        0.7,
+        0.6,
+        0.8,
+        0.7,
+        0.6
+      ],
+      "createdAt": "2026-02-14 18:49:41",
+      "audioPreviewUrl": "/assets/audio/track-08-any-colour-you-like-preview.mp3"
+    },
+    {
+      "id": 9,
+      "trackNumber": 9,
+      "title": "Brain Damage",
+      "duration": "3:46",
+      "composers": [
+        "Roger Waters"
+      ],
+      "themes": [
+        "madness",
+        "mental-health"
+      ],
+      "lyricsExcerpt": "The lunatic is on the grass...",
+      "musicalAnalysis": "Roger Waters' vocals and lyrics about mental illness, building to the album's climax.",
+      "culturalSignificance": "Deals with themes of mental illness and societal attitudes toward those who are different.",
+      "audioPreviewFilename": "track-09-brain-damage-preview.mp3",
+      "waveformData": [
+        0.5,
+        0.7,
+        0.6,
+        0.8,
+        0.7,
+        0.9,
+        0.8,
+        0.7
+      ],
+      "createdAt": "2026-02-14 18:49:41",
+      "audioPreviewUrl": "/assets/audio/track-09-brain-damage-preview.mp3"
+    },
+    {
+      "id": 10,
+      "trackNumber": 10,
+      "title": "Eclipse",
+      "duration": "2:03",
+      "composers": [
+        "Roger Waters"
+      ],
+      "themes": [
+        "life",
+        "death",
+        "unity"
+      ],
+      "lyricsExcerpt": "All that you touch, all that you see...",
+      "musicalAnalysis": "The album's grand finale featuring layered vocals and a powerful conclusion.",
+      "culturalSignificance": "A summary of human existence and experience, bringing together all the album's themes.",
+      "audioPreviewFilename": "track-10-eclipse-preview.mp3",
+      "waveformData": [
+        0.6,
+        0.8,
+        0.7,
+        0.9,
+        0.8,
+        1,
+        0.9,
+        0.8
+      ],
+      "createdAt": "2026-02-14 18:49:41",
+      "audioPreviewUrl": "/assets/audio/track-10-eclipse-preview.mp3"
+    }
+  ]
+}

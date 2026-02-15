@@ -1,0 +1,29 @@
+{
+  "id": 1,
+  "title": "The Dark Side of the Moon",
+  "releaseDate": "1973-03-01",
+  "recordLabel": "Harvest/Capitol",
+  "producer": "Pink Floyd with Alan Parsons engineering",
+  "recordingLocation": "Abbey Road Studios, London",
+  "recordingStartDate": "1972-05-01",
+  "recordingEndDate": "1973-01-01",
+  "overviewText": "The Dark Side of the Moon is the eighth studio album by the English rock band Pink Floyd, released on 1 March 1973. Developed during live performances before recording began, it explores themes such as conflict, greed, time, death, and mental illness. The album is built upon experimentation with tape loops, multitrack recording, and analogue synthesizers.",
+  "salesFigures": {
+    "worldwide": "45+ million",
+    "billboardWeeks": 900
+  },
+  "chartPositions": [
+    {
+      "chart": "Billboard 200",
+      "position": 1,
+      "year": 1973
+    },
+    {
+      "chart": "UK Albums Chart",
+      "position": 2,
+      "year": 1973
+    }
+  ],
+  "createdAt": "2026-02-14 18:49:41",
+  "updatedAt": "2026-02-14 18:49:41"
+}

@@ -1,0 +1,59 @@
+🎵 PINK FLOYD DSOTM - MISSING MEDIA FILES
+==========================================
+
+The application is working, but it needs actual media files to display images and play audio.
+
+📁 REQUIRED FILES:
+
+AUDIO FILES (30-second MP3 previews)
+------------------------------------
+Location: src/assets/audio/
+
+Required files:
+1. track-01-speak-to-me-preview.mp3
+2. track-02-breathe-preview.mp3
+3. track-03-on-the-run-preview.mp3
+4. track-04-time-preview.mp3
+5. track-05-the-great-gig-in-the-sky-preview.mp3
+6. track-06-money-preview.mp3
+7. track-07-us-and-them-preview.mp3
+8. track-08-any-colour-you-like-preview.mp3
+9. track-09-brain-damage-preview.mp3
+10. track-10-eclipse-preview.mp3
+
+Requirements:
+- Format: MP3
+- Duration: Exactly 30 seconds
+- Bitrate: 128kbps recommended
+- Purpose: Fair use audio previews
+
+IMAGE FILES
+-----------
+Location: src/assets/images/artwork/
+
+Expected files (from database):
+- prism-cover.webp (and .jpg fallback)
+- back-cover.webp (and .jpg fallback)
+- abbey-road-session.webp (and .jpg fallback)
+
+Location: src/assets/images/equipment/
+- ems-synthi.webp (and .jpg fallback)
+- neumann-u87.webp (and .jpg fallback)
+- emi-console.webp (and .jpg fallback)
+
+Thumbnail versions should be in:
+src/assets/images/thumbnails/
+
+🚀 HOW TO ADD FILES:
+1. Copy your MP3 files to: src/assets/audio/
+2. Copy your images to: src/assets/images/artwork/
+3. Run: npm run images:optimize (to generate thumbnails and WebP versions)
+4. Run: npm run build
+5. Deploy the dist/ folder
+
+⚠️ IMPORTANT: For copyright compliance:
+- Audio must be 30 seconds maximum (fair use)
+- Images should be properly licensed or fair use
+- Include attribution for all artwork
+
+📝 ALTERNATIVE: Use placeholder files for testing

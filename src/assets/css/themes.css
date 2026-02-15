@@ -1,0 +1,236 @@
+/* ==========================================================================
+   Theme Variables & Light/Dark Mode
+   Color schemes, transitions, and theme-specific styles
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Theme Transition Base
+   -------------------------------------------------------------------------- */
+.theme-transition,
+.theme-transition *,
+.theme-transition *::before,
+.theme-transition *::after {
+  transition: background-color var(--transition-fast),
+              color var(--transition-fast),
+              border-color var(--transition-fast),
+              box-shadow var(--transition-fast) !important;
+}
+
+/* --------------------------------------------------------------------------
+   Light Mode (Default)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Background & Text */
+  --theme-bg-primary: #E0E5EC;
+  --theme-bg-secondary: #d1d9e6;
+  --theme-text-primary: #2E3239;
+  --theme-text-secondary: #5a5f69;
+  --theme-text-muted: #8b9099;
+  
+  /* Shadows */
+  --theme-shadow-light: #ffffff;
+  --theme-shadow-dark: #bec3c9;
+  
+  /* Interactive States */
+  --theme-hover-bg: rgba(0, 0, 0, 0.05);
+  --theme-active-bg: rgba(0, 0, 0, 0.1);
+  --theme-focus-ring: var(--color-accent-blue);
+  
+  /* Borders */
+  --theme-border-subtle: rgba(0, 0, 0, 0.1);
+  --theme-border-default: rgba(0, 0, 0, 0.2);
+  
+  /* Code/Monospace */
+  --theme-code-bg: #f0f3f7;
+  --theme-code-text: #2E3239;
+}
+
+/* --------------------------------------------------------------------------
+   Dark Mode
+   -------------------------------------------------------------------------- */
+[data-theme="dark"] {
+  /* Background & Text */
+  --theme-bg-primary: #2E3239;
+  --theme-bg-secondary: #25282e;
+  --theme-text-primary: #E0E5EC;
+  --theme-text-secondary: #b0b8c4;
+  --theme-text-muted: #7a8391;
+  
+  /* Shadows */
+  --theme-shadow-light: #3e434c;
+  --theme-shadow-dark: #1e2126;
+  
+  /* Interactive States */
+  --theme-hover-bg: rgba(255, 255, 255, 0.05);
+  --theme-active-bg: rgba(255, 255, 255, 0.1);
+  --theme-focus-ring: var(--color-accent-teal);
+  
+  /* Borders */
+  --theme-border-subtle: rgba(255, 255, 255, 0.1);
+  --theme-border-default: rgba(255, 255, 255, 0.2);
+  
+  /* Code/Monospace */
+  --theme-code-bg: #25282e;
+  --theme-code-text: #E0E5EC;
+}
+
+/* System preference fallback */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --theme-bg-primary: #2E3239;
+    --theme-bg-secondary: #25282e;
+    --theme-text-primary: #E0E5EC;
+    --theme-text-secondary: #b0b8c4;
+    --theme-text-muted: #7a8391;
+    --theme-shadow-light: #3e434c;
+    --theme-shadow-dark: #1e2126;
+    --theme-hover-bg: rgba(255, 255, 255, 0.05);
+    --theme-active-bg: rgba(255, 255, 255, 0.1);
+    --theme-focus-ring: var(--color-accent-teal);
+    --theme-border-subtle: rgba(255, 255, 255, 0.1);
+    --theme-border-default: rgba(255, 255, 255, 0.2);
+    --theme-code-bg: #25282e;
+    --theme-code-text: #E0E5EC;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Theme Toggle Button
+   -------------------------------------------------------------------------- */
+.theme-toggle {
+  position: relative;
+  width: 56px;
+  height: 28px;
+  background: var(--color-bg);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-in);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.theme-toggle__slider {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(135deg, var(--color-accent-yellow), var(--color-accent-orange));
+  border-radius: 50%;
+  box-shadow: var(--shadow-out);
+  transition: transform var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.theme-toggle__slider::before {
+  content: '☀️';
+  filter: grayscale(0.3);
+}
+
+[data-theme="dark"] .theme-toggle__slider,
+:root:not([data-theme]) .theme-toggle__slider {
+  transform: translateX(28px);
+  background: linear-gradient(135deg, var(--color-accent-purple), var(--color-accent-blue));
+}
+
+[data-theme="dark"] .theme-toggle__slider::before,
+:root:not([data-theme]) .theme-toggle__slider::before {
+  content: '🌙';
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid var(--theme-focus-ring);
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Theme-Aware Utility Classes
+   -------------------------------------------------------------------------- */
+.text-primary {
+  color: var(--theme-text-primary);
+}
+
+.text-secondary {
+  color: var(--theme-text-secondary);
+}
+
+.text-muted {
+  color: var(--theme-text-muted);
+}
+
+.bg-primary {
+  background-color: var(--theme-bg-primary);
+}
+
+.bg-secondary {
+  background-color: var(--theme-bg-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   Reading Mode Optimizations
+   -------------------------------------------------------------------------- */
+[data-theme="dark"] .reading-content {
+  /* Optimize text for dark mode reading */
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+}
+
+[data-theme="dark"] .reading-content h1,
+[data-theme="dark"] .reading-content h2,
+[data-theme="dark"] .reading-content h3 {
+  /* Reduce brightness of headings in dark mode */
+  color: var(--theme-text-primary);
+  font-weight: 600;
+}
+
+[data-theme="dark"] .reading-content p {
+  /* Slightly dimmed body text for comfort */
+  color: var(--theme-text-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   High Contrast Mode Support
+   -------------------------------------------------------------------------- */
+@media (prefers-contrast: high) {
+  :root {
+    --theme-border-subtle: rgba(0, 0, 0, 0.5);
+    --theme-border-default: rgba(0, 0, 0, 0.8);
+  }
+  
+  [data-theme="dark"] {
+    --theme-border-subtle: rgba(255, 255, 255, 0.5);
+    --theme-border-default: rgba(255, 255, 255, 0.8);
+  }
+  
+  /* Ensure focus indicators are highly visible */
+  *:focus-visible {
+    outline: 4px solid currentColor !important;
+    outline-offset: 4px !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Print Styles (Theme-Agnostic)
+   -------------------------------------------------------------------------- */
+@media print {
+  :root {
+    --color-bg: #ffffff !important;
+    --color-text: #000000 !important;
+    --theme-bg-primary: #ffffff !important;
+    --theme-text-primary: #000000 !important;
+    --shadow-out: none !important;
+    --shadow-in: none !important;
+    --shadow-convex: none !important;
+    --shadow-concave: none !important;
+  }
+  
+  .neo-convex,
+  .neo-concave,
+  .neo-flat,
+  .neo-inset {
+    box-shadow: none !important;
+    border: 1px solid #ccc;
+  }
+}

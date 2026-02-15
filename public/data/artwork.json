@@ -1,0 +1,52 @@
+{
+  "artwork": [
+    {
+      "id": 1,
+      "title": "Prism Album Cover",
+      "category": "cover",
+      "imageFilename": "prism-cover.webp",
+      "thumbnailFilename": "prism-cover-thumb.webp",
+      "designer": "Storm Thorgerson / Hipgnosis",
+      "description": "The iconic album cover featuring a prism dispersing white light into a rainbow spectrum against a black background, representing the album's themes of light, darkness, and transformation.",
+      "year": 1973,
+      "copyrightNotice": "© 1973 Pink Floyd Music Ltd. Design by Hipgnosis.",
+      "isPrimary": 1,
+      "displayOrder": 1,
+      "createdAt": "2026-02-14 18:49:41",
+      "imageUrl": "/assets/images/artwork/prism-cover.webp",
+      "thumbnailUrl": "/assets/images/artwork/thumbnails/prism-cover-thumb.webp"
+    },
+    {
+      "id": 2,
+      "title": "Back Cover",
+      "category": "cover",
+      "imageFilename": "back-cover.webp",
+      "thumbnailFilename": "back-cover-thumb.webp",
+      "designer": "Storm Thorgerson / Hipgnosis",
+      "description": "The back cover features the reverse image: a rainbow converging into a prism, symbolizing unity and completion.",
+      "year": 1973,
+      "copyrightNotice": "© 1973 Pink Floyd Music Ltd. Design by Hipgnosis.",
+      "isPrimary": 0,
+      "displayOrder": 2,
+      "createdAt": "2026-02-14 18:49:41",
+      "imageUrl": "/assets/images/artwork/back-cover.webp",
+      "thumbnailUrl": "/assets/images/artwork/thumbnails/back-cover-thumb.webp"
+    },
+    {
+      "id": 3,
+      "title": "Abbey Road Studios Session",
+      "category": "behind-scenes",
+      "imageFilename": "abbey-road-session.webp",
+      "thumbnailFilename": "abbey-road-session-thumb.webp",
+      "designer": "Jill Furmanovsky",
+      "description": "The band recording at Abbey Road Studios in 1972, capturing the creative process behind the album.",
+      "year": 1972,
+      "copyrightNotice": "© 1972 Pink Floyd Music Ltd. Photo by Jill Furmanovsky.",
+      "isPrimary": 0,
+      "displayOrder": 3,
+      "createdAt": "2026-02-14 18:49:41",
+      "imageUrl": "/assets/images/artwork/abbey-road-session.webp",
+      "thumbnailUrl": "/assets/images/artwork/thumbnails/abbey-road-session-thumb.webp"
+    }
+  ]
+}

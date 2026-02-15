@@ -1,0 +1,72 @@
+{
+  "themes": [
+    {
+      "id": 1,
+      "slug": "time",
+      "name": "Time",
+      "description": "Time explores humanity's relationship with the passage of time, the anxiety of aging, and the realization that life is shorter than we imagine. The tracks \"Time\" and \"Breathe\" address how we spend our days and the danger of letting life slip away while we focus on trivial matters.",
+      "icon": "clock",
+      "colorAccent": "#FF6B6B",
+      "displayOrder": 1,
+      "createdAt": "2026-02-14 18:49:41",
+      "associatedTracks": [
+        "Breathe",
+        "Time"
+      ]
+    },
+    {
+      "id": 2,
+      "slug": "death",
+      "name": "Death & Mortality",
+      "description": "Death is an ever-present theme throughout the album, from the heartbeat that opens and closes the record to Clare Torry's ethereal vocals on \"The Great Gig in the Sky.\" Rather than fearing death, the album suggests accepting mortality as a natural part of existence.",
+      "icon": "skull",
+      "colorAccent": "#4ECDC4",
+      "displayOrder": 2,
+      "createdAt": "2026-02-14 18:49:41",
+      "associatedTracks": [
+        "Time",
+        "The Great Gig in the Sky",
+        "Eclipse"
+      ]
+    },
+    {
+      "id": 3,
+      "slug": "money",
+      "name": "Money & Greed",
+      "description": "Money and materialism are satirized in one of the album's most famous tracks. The song critiques how the pursuit of wealth corrupts human values and creates inequality. The cash register sounds that open the track emphasize the omnipresence of money in modern life.",
+      "icon": "dollar-sign",
+      "colorAccent": "#45B7D1",
+      "displayOrder": 3,
+      "createdAt": "2026-02-14 18:49:41",
+      "associatedTracks": [
+        "Money"
+      ]
+    },
+    {
+      "id": 4,
+      "slug": "mental-health",
+      "name": "Mental Health",
+      "description": "Mental illness and societal attitudes toward those who struggle with it are central themes. The album humanizes those labeled as \"mad\" or \"lunatics,\" questioning who truly has the right to define sanity. \"Brain Damage\" draws from Roger Waters' personal experiences.",
+      "icon": "brain",
+      "colorAccent": "#96CEB4",
+      "displayOrder": 4,
+      "createdAt": "2026-02-14 18:49:41",
+      "associatedTracks": [
+        "Brain Damage"
+      ]
+    },
+    {
+      "id": 5,
+      "slug": "conflict",
+      "name": "Conflict & War",
+      "description": "War and human conflict are addressed in \"Us and Them,\" which questions why humanity is divided into opposing sides. The song suggests that these divisions are often arbitrary and that recognizing our shared humanity is the path to peace.",
+      "icon": "peace",
+      "colorAccent": "#FFEAA7",
+      "displayOrder": 5,
+      "createdAt": "2026-02-14 18:49:41",
+      "associatedTracks": [
+        "Us and Them"
+      ]
+    }
+  ]
+}

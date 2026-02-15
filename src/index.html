@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Pink Floyd - The Dark Side of the Moon: An interactive fan experience exploring the iconic album"
+    />
+    <meta name="theme-color" content="#E0E5EC" />
+
+    <title>The Dark Side of the Moon - Pink Floyd</title>
+
+    <!-- Resource Hints (T093) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://plausible.io" />
+    <link rel="dns-prefetch" href="https://cdn.usefathom.com" />
+
+    <!-- Preload Critical Assets (T093) -->
+    <link rel="preload" href="/assets/css/main.css" as="style" />
+    <link rel="preload" href="/assets/css/neomorphic.css" as="style" />
+    <link rel="preload" href="/assets/css/themes.css" as="style" />
+    <link rel="preload" href="/assets/js/main.js" as="module" />
+
+    <!-- Prefetch Below-Fold Resources (T093) -->
+    <link
+      rel="prefetch"
+      href="/assets/js/components/album-overview.js"
+      as="script"
+    />
+    <link
+      rel="prefetch"
+      href="/assets/js/components/track-explorer.js"
+      as="script"
+    />
+
+    <!-- Critical CSS Inline (T094) -->
+    <style>
+      /* Critical CSS for above-fold content */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        font-size: 16px;
+        -webkit-text-size-adjust: 100%;
+      }
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        line-height: 1.5;
+        background: #e0e5ec;
+        color: #2e3239;
+        min-height: 100vh;
+      }
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: #2e3239;
+        color: #e0e5ec;
+        padding: 0.5rem 1rem;
+        z-index: 999;
+        transition: top 0.1s;
+      }
+      .skip-link:focus {
+        top: 0;
+      }
+      .container {
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+      .site-header {
+        padding: 1.5rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 200;
+        background: #e0e5ec;
+      }
+      .neo-flat {
+        background: #e0e5ec;
+        border-radius: 1rem;
+        padding: 1.5rem;
+        box-shadow:
+          8px 8px 16px #bec3c9,
+          -8px -8px 16px #fff;
+      }
+      .skeleton-container {
+        padding: 1.5rem 0;
+      }
+      .neo-skeleton {
+        background: linear-gradient(
+          90deg,
+          #e0e5ec 25%,
+          #d1d9e6 50%,
+          #e0e5ec 75%
+        );
+        background-size: 200% 100%;
+        animation: shimmer 1.5s infinite;
+        border-radius: 0.5rem;
+      }
+      @keyframes shimmer {
+        0% {
+          background-position: 200% 0;
+        }
+        100% {
+          background-position: -200% 0;
+        }
+      }
+      [data-theme="dark"],
+      :root:not([data-theme]):not([data-theme]):not([data-theme="light"]):not(
+          [data-theme="dark"]
+        ) {
+        @media (prefers-color-scheme: dark) {
+          body {
+            background: #2e3239;
+            color: #e0e5ec;
+          }
+        }
+      }
+      [data-theme="dark"] {
+        body {
+          background: #2e3239;
+          color: #e0e5ec;
+        }
+      }
+    </style>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/neomorphic.css" />
+    <link rel="stylesheet" href="/assets/css/themes.css" />
+    <link rel="stylesheet" href="/assets/css/components/album-overview.css" />
+    <link rel="stylesheet" href="/assets/css/components/track-explorer.css" />
+    <link rel="stylesheet" href="/assets/css/components/art-gallery.css" />
+    <link rel="stylesheet" href="/assets/css/components/themes-explorer.css" />
+    <link
+      rel="stylesheet"
+      href="/assets/css/components/recording-deep-dive.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/css/components/interactive-experience.css"
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌈</text></svg>"
+    />
+  </head>
+  <body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="site-header" role="banner">
+      <div class="container">
+        <div class="header-content neo-flat">
+          <!-- Logo/Title -->
+          <div class="site-branding">
+            <h1 class="site-title">
+              <span class="visually-hidden">Pink Floyd</span>
+              The Dark Side of the Moon
+            </h1>
+            <p class="site-tagline">An Interactive Album Experience</p>
+          </div>
+
+          <!-- Theme Toggle -->
+          <button
+            class="theme-toggle"
+            id="theme-toggle"
+            aria-label="Toggle light and dark theme"
+            title="Toggle theme"
+          >
+            <span class="theme-toggle__slider"></span>
+          </button>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="main-nav" role="navigation" aria-label="Main navigation">
+          <ul class="nav-list neo-nav">
+            <li>
+              <a href="#album" class="nav-link" data-section="album"
+                >Album Overview</a
+              >
+            </li>
+            <li>
+              <a href="#tracks" class="nav-link" data-section="tracks"
+                >Track Explorer</a
+              >
+            </li>
+            <li>
+              <a href="#gallery" class="nav-link" data-section="gallery"
+                >Visual Gallery</a
+              >
+            </li>
+            <li>
+              <a href="#themes" class="nav-link" data-section="themes"
+                >Themes</a
+              >
+            </li>
+            <li>
+              <a href="#recording" class="nav-link" data-section="recording"
+                >Recording</a
+              >
+            </li>
+            <li>
+              <a href="#interactive" class="nav-link" data-section="interactive"
+                >Interactive</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content" role="main">
+      <!-- Section: Album Overview -->
+      <section
+        id="album"
+        class="content-section"
+        aria-labelledby="album-heading"
+      >
+        <div class="container">
+          <header class="section-header">
+            <h2 id="album-heading" class="section-title">Album Overview</h2>
+          </header>
+
+          <!-- Skeleton Loading Placeholder -->
+          <div class="skeleton-container" data-skeleton="album">
+            <div class="skeleton-grid">
+              <div class="neo-skeleton skeleton-album-cover"></div>
+              <div class="skeleton-content">
+                <div class="neo-skeleton skeleton-text-lg"></div>
+                <div class="neo-skeleton skeleton-text"></div>
+                <div class="neo-skeleton skeleton-text"></div>
+                <div class="neo-skeleton skeleton-text-sm"></div>
+              </div>
+            </div>
+            <div class="skeleton-timeline">
+              <div class="neo-skeleton skeleton-timeline-item"></div>
+              <div class="neo-skeleton skeleton-timeline-item"></div>
+              <div class="neo-skeleton skeleton-timeline-item"></div>
+            </div>
+          </div>
+
+          <!-- Dynamic Content Container -->
+          <div
+            id="album-content"
+            class="dynamic-content"
+            aria-live="polite"
+          ></div>
+        </div>
+      </section>
+
+      <!-- Section: Track Explorer -->
+      <section
+        id="tracks"
+        class="content-section"
+        aria-labelledby="tracks-heading"
+      >
+        <div class="container">
+          <header class="section-header">
+            <h2 id="tracks-heading" class="section-title">Track Explorer</h2>
+          </header>
+
+          <!-- Skeleton Loading Placeholder -->
+          <div class="skeleton-container" data-skeleton="tracks">
+            <div class="skeleton-track-list">
+              <div class="neo-skeleton skeleton-track-item"></div>
+              <div class="neo-skeleton skeleton-track-item"></div>
+              <div class="neo-skeleton skeleton-track-item"></div>
+              <div class="neo-skeleton skeleton-track-item"></div>
+              <div class="neo-skeleton skeleton-track-item"></div>
+            </div>
+          </div>
+
+          <!-- Dynamic Content Container -->
+          <div
+            id="tracks-content"
+            class="dynamic-content"
+            aria-live="polite"
+          ></div>
+        </div>
+      </section>
+
+      <!-- Section: Visual Gallery -->
+      <section
+        id="gallery"
+        class="content-section"
+        aria-labelledby="gallery-heading"
+      >
+        <div class="container">
+          <header class="section-header">
+            <h2 id="gallery-heading" class="section-title">
+              Visual Art Gallery
+            </h2>
+          </header>
+
+          <!-- Skeleton Loading Placeholder -->
+          <div class="skeleton-container" data-skeleton="gallery">
+            <div class="skeleton-gallery">
+              <div class="neo-skeleton skeleton-gallery-item"></div>
+              <div class="neo-skeleton skeleton-gallery-item"></div>
+              <div class="neo-skeleton skeleton-gallery-item"></div>
+              <div class="neo-skeleton skeleton-gallery-item"></div>
+            </div>
+          </div>
+
+          <!-- Dynamic Content Container -->
+          <div
+            id="gallery-content"
+            class="dynamic-content"
+            aria-live="polite"
+          ></div>
+        </div>
+      </section>
+
+      <!-- Section: Themes -->
+      <section
+        id="themes"
+        class="content-section"
+        aria-labelledby="themes-heading"
+      >
+        <div class="container">
+          <header class="section-header">
+            <h2 id="themes-heading" class="section-title">Themes & Meanings</h2>
+          </header>
+
+          <!-- Skeleton Loading Placeholder -->
+          <div class="skeleton-container" data-skeleton="themes">
+            <div class="skeleton-themes">
+              <div class="neo-skeleton skeleton-theme-card"></div>
+              <div class="neo-skeleton skeleton-theme-card"></div>
+              <div class="neo-skeleton skeleton-theme-card"></div>
+            </div>
+          </div>
+
+          <!-- Dynamic Content Container -->
+          <div
+            id="themes-content"
+            class="dynamic-content"
+            aria-live="polite"
+          ></div>
+        </div>
+      </section>
+
+      <!-- Section: Recording Deep Dive -->
+      <section
+        id="recording"
+        class="content-section"
+        aria-labelledby="recording-heading"
+      >
+        <div class="container">
+          <header class="section-header">
+            <h2 id="recording-heading" class="section-title">
+              Recording & Production
+            </h2>
+          </header>
+
+          <!-- Skeleton Loading Placeholder -->
+          <div class="skeleton-container" data-skeleton="recording">
+            <div class="skeleton-equipment">
+              <div class="neo-skeleton skeleton-equipment-card"></div>
+              <div class="neo-skeleton skeleton-equipment-card"></div>
+            </div>
+          </div>
+
+          <!-- Dynamic Content Container -->
+          <div
+            id="recording-content"
+            class="dynamic-content"
+            aria-live="polite"
+          ></div>
+        </div>
+      </section>
+
+      <!-- Section: Interactive Experience -->
+      <section
+        id="interactive"
+        class="content-section"
+        aria-labelledby="interactive-heading"
+      >
+        <div class="container">
+          <header class="section-header">
+            <h2 id="interactive-heading" class="section-title">
+              Interactive Experience
+            </h2>
+          </header>
+
+          <!-- Dynamic Content Container -->
+          <div
+            id="interactive-content"
+            class="dynamic-content"
+            aria-live="polite"
+          ></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-content neo-flat">
+          <!-- Copyright & Legal -->
+          <div class="footer-legal">
+            <p class="copyright-notice">
+              © 1973 Pink Floyd Music Ltd. All rights reserved.
+            </p>
+            <p class="fair-use-notice">
+              This is an unofficial fan website. All content is used under fair
+              use for educational purposes. Audio previews are limited to 30
+              seconds per track.
+            </p>
+            <p class="disclaimer">
+              The Dark Side of the Moon™, Pink Floyd™, and all related
+              trademarks are property of Pink Floyd Music Ltd. This site is not
+              affiliated with or endorsed by Pink Floyd.
+            </p>
+          </div>
+
+          <!-- Links -->
+          <nav class="footer-nav" aria-label="Footer navigation">
+            <ul class="footer-links">
+              <li><a href="#album" class="footer-link">Album</a></li>
+              <li><a href="#tracks" class="footer-link">Tracks</a></li>
+              <li><a href="#gallery" class="footer-link">Gallery</a></li>
+              <li>
+                <a
+                  href="https://pinkfloyd.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="footer-link"
+                  >Official Site ↗</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <p class="credits">
+          Designed with 💜 for fans everywhere •
+          <a
+            href="https://github.com/yourusername/pink-floyd-dsotm"
+            target="_blank"
+            rel="noopener"
+            >View on GitHub</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <!-- Privacy-Focused Analytics (T088) - Zero PII, GDPR Compliant -->
+    <!-- Plausible Analytics - Uncomment and set VITE_PLAUSIBLE_DOMAIN in .env to enable -->
+    <!-- <script defer data-domain="YOUR_DOMAIN" src="https://plausible.io/js/script.js"></script> -->
+
+    <!-- Fathom Analytics - Alternative to Plausible -->
+    <!-- <script src="https://cdn.usefathom.com/script.js" data-site="YOUR_SITE_ID" defer></script> -->
+
+    <!-- Scripts -->
+    <script type="module" src="/assets/js/main.js"></script>
+
+    <!-- No-JS Fallback Message -->
+    <noscript>
+      <div class="no-js-warning neo-flat" role="alert">
+        <p>
+          <strong>JavaScript is disabled.</strong> This site works best with
+          JavaScript enabled for interactive features. Core content is still
+          accessible.
+        </p>
+      </div>
+    </noscript>
+  </body>
+</html>

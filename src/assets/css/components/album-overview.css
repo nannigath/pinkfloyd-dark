@@ -1,0 +1,244 @@
+/* ==========================================================================
+   Album Overview Component Styles
+   ========================================================================== */
+
+.album-overview {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Hero Section */
+.album-hero {
+  display: grid;
+  gap: var(--space-12);
+  margin-bottom: var(--space-16);
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .album-hero {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+.album-cover {
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+}
+
+.album-cover img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform var(--transition-normal);
+}
+
+.album-cover:hover img {
+  transform: scale(1.02);
+}
+
+.album-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.album-title {
+  font-size: var(--font-size-4xl);
+  margin: 0;
+  line-height: 1.1;
+}
+
+/* Album Meta */
+.album-meta {
+  display: grid;
+  gap: var(--space-6);
+  padding: var(--space-8);
+  border-radius: var(--radius-lg);
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.meta-label {
+  font-size: var(--font-size-sm);
+  color: var(--theme-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.meta-value {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--theme-text-primary);
+}
+
+/* Album Description */
+.album-description {
+  padding: var(--space-10);
+  margin-bottom: var(--space-10);
+}
+
+.album-description h2 {
+  margin-bottom: var(--space-6);
+}
+
+.album-description p {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--theme-text-secondary);
+}
+
+/* Recording Timeline */
+.recording-timeline {
+  padding: var(--space-10);
+  margin-bottom: var(--space-10);
+}
+
+.recording-timeline h2 {
+  margin-bottom: var(--space-6);
+}
+
+.timeline {
+  position: relative;
+  padding-left: var(--space-8);
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    var(--color-accent-blue),
+    var(--color-accent-teal),
+    var(--color-accent-green)
+  );
+  border-radius: var(--radius-full);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: var(--space-8);
+  outline: none;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-item:focus-visible {
+  outline: none;
+}
+
+.timeline-item:focus-visible .timeline-content {
+  outline: 3px solid var(--color-accent-blue);
+  outline-offset: 3px;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -33px;
+  top: var(--space-4);
+  width: 12px;
+  height: 12px;
+  background: var(--color-bg);
+  border: 3px solid var(--color-accent-blue);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.marker-major {
+  width: 20px;
+  height: 20px;
+  left: -37px;
+  background: var(--color-accent-blue);
+  border-width: 4px;
+  border-color: var(--color-bg);
+}
+
+.timeline-content {
+  padding: var(--space-4) var(--space-6);
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+}
+
+.timeline-content:hover {
+  transform: translateX(4px);
+}
+
+.timeline-date {
+  display: block;
+  font-size: var(--font-size-sm);
+  color: var(--color-accent-blue);
+  font-weight: 600;
+  margin-bottom: var(--space-1);
+}
+
+.timeline-label {
+  font-size: var(--font-size-lg);
+  margin: 0 0 var(--space-2);
+}
+
+.timeline-description {
+  font-size: var(--font-size-base);
+  color: var(--theme-text-secondary);
+  margin: 0;
+}
+
+/* Commercial Success */
+.commercial-success {
+  padding: var(--space-10);
+}
+
+.commercial-success h2 {
+  margin-bottom: var(--space-6);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-4);
+}
+
+.stat-card {
+  padding: var(--space-8);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.stat-number {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  color: var(--color-accent-blue);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: var(--font-size-sm);
+  color: var(--theme-text-secondary);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .album-cover img,
+  .timeline-content {
+    transition: none;
+  }
+  
+  .album-cover:hover img {
+    transform: none;
+  }
+  
+  .timeline-content:hover {
+    transform: none;
+  }
+}

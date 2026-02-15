@@ -1,0 +1,55 @@
+{
+  "equipment": [
+    {
+      "id": 1,
+      "name": "EMS Synthi AKS",
+      "type": "synthesizer",
+      "manufacturer": "EMS",
+      "model": "Synthi AKS",
+      "specifications": "Portable synthesizer with pin matrix patching, three oscillators, filter, and envelope generator",
+      "imageFilename": "ems-synthi.webp",
+      "usageDescription": "Used extensively on \"On the Run\" to create the driving synthesizer sequence and sound effects. Roger Waters created the main sequence on this portable synth.",
+      "associatedTracks": [
+        "On the Run",
+        "Any Colour You Like"
+      ],
+      "displayOrder": 1,
+      "createdAt": "2026-02-14 18:49:41",
+      "imageUrl": "/assets/images/equipment/ems-synthi.webp"
+    },
+    {
+      "id": 2,
+      "name": "Neumann U87 Microphone",
+      "type": "microphone",
+      "manufacturer": "Neumann",
+      "model": "U87",
+      "specifications": "Large diaphragm condenser microphone with three polar patterns",
+      "imageFilename": "neumann-u87.webp",
+      "usageDescription": "Used for recording vocals throughout the album, particularly on \"The Great Gig in the Sky\" for Clare Torry's voice.",
+      "associatedTracks": [
+        "The Great Gig in the Sky",
+        "Brain Damage",
+        "Eclipse"
+      ],
+      "displayOrder": 2,
+      "createdAt": "2026-02-14 18:49:41",
+      "imageUrl": "/assets/images/equipment/neumann-u87.webp"
+    },
+    {
+      "id": 3,
+      "name": "Abbey Road EMI TG12345 Console",
+      "type": "mixer",
+      "manufacturer": "EMI",
+      "model": "TG12345 Mk IV",
+      "specifications": "16-track mixing console with transistor-based design",
+      "imageFilename": "emi-console.webp",
+      "usageDescription": "The main recording console used at Abbey Road Studios during the sessions, providing the distinctive sound of the album.",
+      "associatedTracks": [
+        "All Tracks"
+      ],
+      "displayOrder": 3,
+      "createdAt": "2026-02-14 18:49:41",
+      "imageUrl": "/assets/images/equipment/emi-console.webp"
+    }
+  ]
+}
