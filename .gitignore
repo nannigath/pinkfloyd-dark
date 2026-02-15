@@ -56,3 +56,14 @@ cache/
 test-results/
 playwright-report/
 playwright/.cache/
+
+# Backup files
+*.toml.backup
+
+# Image files in root that shouldn't be tracked
+*.jpg
+*.webp
+*.png
+*.gif
+*.svg
+*.bmp
