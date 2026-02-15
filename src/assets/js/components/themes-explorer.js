@@ -44,7 +44,7 @@ export async function renderThemesExplorer(container) {
               </div>
               
               <div class="theme-card-back" hidden>
-                <button class="theme-close-btn" aria-label="Close theme details">✕</button>
+                <button class="theme-close-btn" aria-label="Close theme details"><i data-lucide="x"></i></button>
                 <div class="theme-content">
                   <div class="theme-header-back">
                     <div class="theme-icon-back" style="color: ${theme.colorAccent}">${getThemeIcon(theme.slug)}</div>
@@ -73,7 +73,7 @@ export async function renderThemesExplorer(container) {
                             >
                               <span class="track-number">${String(track.trackNumber).padStart(2, "0")}</span>
                               <span class="track-title">${track.title}</span>
-                              <span class="track-arrow">→</span>
+                              <span class="track-arrow"><i data-lucide="arrow-right"></i></span>
                             </a>
                           </li>
                         `
@@ -114,6 +114,9 @@ export async function renderThemesExplorer(container) {
 
     container.innerHTML = html;
 
+    // Initialize Lucide icons in the container
+    if (window.initLucideIcons) window.initLucideIcons(container);
+
     // Set up theme card interactions
     setupThemeInteractions(container, tracks);
   } catch (error) {
@@ -140,8 +143,13 @@ function setupThemeInteractions(container, tracks) {
 
     // Click to flip/expand
     card.addEventListener("click", (e) => {
-      // Don't flip if clicking a track link
-      if (e.target.closest(".theme-track-link")) return;
+      // Prevent event from bubbling to parent elements
+      e.stopPropagation();
+      
+      // Don't flip if clicking a track link or close button
+      if (e.target.closest(".theme-track-link") || e.target.closest(".theme-close-btn")) {
+        return;
+      }
 
       if (prefersReducedMotion) {
         // Use modal instead of flip for reduced motion
@@ -282,13 +290,13 @@ function navigateToTrack(trackId, tracks) {
  */
 function getThemeIcon(slug) {
   const icons = {
-    time: "T",
-    death: "D",
-    money: "M",
-    "mental-health": "MH",
-    conflict: "C",
+    time: '<i data-lucide="clock"></i>',
+    death: '<i data-lucide="skull"></i>',
+    money: '<i data-lucide="piggy-bank"></i>',
+    "mental-health": '<i data-lucide="heart-handshake"></i>',
+    conflict: '<i data-lucide="swords"></i>',
   };
-  return icons[slug] || "●";
+  return icons[slug] || '<i data-lucide="info"></i>';
 }
 
 export default renderThemesExplorer;

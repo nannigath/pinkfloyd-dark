@@ -46,11 +46,11 @@ export async function renderInteractiveExperience(container) {
               </select>
               
               <button id="visualizer-play-btn" class="neo-button visualizer-play-btn" disabled>
-                <span class="play-icon">▶</span> Play with Visualizer
+                <i data-lucide="play" class="play-icon"></i> Play with Visualizer
               </button>
               
               <button id="visualizer-stop-btn" class="neo-button" disabled>
-                ⏹ Stop
+                <i data-lucide="square"></i> Stop
               </button>
             </div>
             
@@ -188,12 +188,15 @@ export async function renderInteractiveExperience(container) {
     `;
     
     container.innerHTML = html;
-    
+
+    // Initialize Lucide icons in the container
+    if (window.initLucideIcons) window.initLucideIcons(container);
+
     // Set up all interactive features
     setupVisualizer(container, tracks);
     setupPrismCreator(container);
     setupQuiz(container, tracks);
-    
+
   } catch (error) {
     console.error('Failed to render interactive experience:', error);
     container.innerHTML = `
@@ -378,7 +381,8 @@ function setupPrismCreator(container) {
     const saved = localStorage.setItem('prismDesign', JSON.stringify(design));
     
     // Show confirmation
-    saveBtn.textContent = '✓ Saved!';
+    saveBtn.innerHTML = '<i data-lucide="check"></i> Saved!';
+    if (window.initLucideIcons) window.initLucideIcons(saveBtn); // Initialize the icon
     setTimeout(() => {
       saveBtn.textContent = 'Save Design';
     }, 2000);

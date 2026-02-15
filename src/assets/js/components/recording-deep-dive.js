@@ -36,39 +36,39 @@ export async function renderRecordingDeepDive(container) {
           <div class="signal-flow-diagram" role="img" aria-label="Signal flow diagram for Money track">
             <div class="signal-flow-stages">
               <div class="flow-stage" data-tooltip="source">
-                <div class="stage-icon neo-convex">In</div>
+                <div class="stage-icon neo-convex"><i data-lucide="guitar"></i></div>
                 <span class="stage-label">Source</span>
                 <span class="stage-detail">Guitar/Bass</span>
               </div>
-              
-              <div class="flow-arrow">→</div>
-              
+
+              <div class="flow-arrow"><i data-lucide="arrow-right"></i></div>
+
               <div class="flow-stage" data-tooltip="tape-loop">
-                <div class="stage-icon neo-convex">1</div>
+                <div class="stage-icon neo-convex"><i data-lucide="cassette-tape"></i></div>
                 <span class="stage-label">Tape Loop</span>
                 <span class="stage-detail">7/4 Loop</span>
               </div>
-              
-              <div class="flow-arrow">→</div>
-              
+
+              <div class="flow-arrow"><i data-lucide="arrow-right"></i></div>
+
               <div class="flow-stage" data-tooltip="mixer">
-                <div class="stage-icon neo-convex">2</div>
+                <div class="stage-icon neo-convex"><i data-lucide="sliders"></i></div>
                 <span class="stage-label">EMI Console</span>
                 <span class="stage-detail">16-Track Mix</span>
               </div>
-              
-              <div class="flow-arrow">→</div>
-              
+
+              <div class="flow-arrow"><i data-lucide="arrow-right"></i></div>
+
               <div class="flow-stage" data-tooltip="effects">
-                <div class="stage-icon neo-convex">3</div>
+                <div class="stage-icon neo-convex"><i data-lucide="zap"></i></div>
                 <span class="stage-label">Effects</span>
                 <span class="stage-detail">Delay/Reverb</span>
               </div>
-              
-              <div class="flow-arrow">→</div>
-              
+
+              <div class="flow-arrow"><i data-lucide="arrow-right"></i></div>
+
               <div class="flow-stage" data-tooltip="master">
-                <div class="stage-icon neo-convex">Out</div>
+                <div class="stage-icon neo-convex"><i data-lucide="speaker"></i></div>
                 <span class="stage-label">Master</span>
                 <span class="stage-detail">Stereo Out</span>
               </div>
@@ -229,6 +229,9 @@ export async function renderRecordingDeepDive(container) {
 
     container.innerHTML = html;
 
+    // Initialize Lucide icons in the container
+    if (window.initLucideIcons) window.initLucideIcons(container);
+
     // Set up interactions
     setupSignalFlowInteractions(container);
     setupAudioComparison(container);
@@ -371,13 +374,13 @@ function setupAudioComparison(container) {
  */
 function getEquipmentIcon(type) {
   const icons = {
-    synthesizer: "SYN",
-    microphone: "MIC",
-    mixer: "MIX",
-    effects: "FX",
-    tape: "TAPE",
+    synthesizer: '<i data-lucide="waves"></i>',
+    microphone: '<i data-lucide="mic"></i>',
+    mixer: '<i data-lucide="sliders"></i>',
+    effects: '<i data-lucide="activity"></i>',
+    tape: '<i data-lucide="disc"></i>',
   };
-  return icons[type] || "EQ";
+  return icons[type] || '<i data-lucide="settings"></i>';
 }
 
 /**

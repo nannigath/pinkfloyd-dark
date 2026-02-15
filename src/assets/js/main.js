@@ -14,6 +14,24 @@ import {
   trackThemeChange,
 } from "./utils/analytics.js";
 
+// Initialize Lucide icons globally if available
+if (typeof lucide !== 'undefined') {
+  lucide.createIcons();
+}
+
+/**
+ * Initialize Lucide icons in a container
+ * @param {HTMLElement} container - Container element to initialize icons in
+ */
+function initLucideIcons(container = document) {
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons({ container });
+  }
+}
+
+// Expose the function globally so it can be used in components
+window.initLucideIcons = initLucideIcons;
+
 /**
  * Initialize the application
  */
@@ -207,6 +225,7 @@ async function loadInitialData() {
       const { renderTrackExplorer } =
         await import("./components/track-explorer.js");
       await renderTrackExplorer(tracksContainer);
+      if (window.initLucideIcons) window.initLucideIcons(tracksContainer);
       hideSkeleton("tracks");
     }
 
@@ -215,6 +234,7 @@ async function loadInitialData() {
     if (galleryContainer) {
       const { renderArtGallery } = await import("./components/art-gallery.js");
       await renderArtGallery(galleryContainer);
+      if (window.initLucideIcons) window.initLucideIcons(galleryContainer);
       hideSkeleton("gallery");
     }
 
@@ -224,6 +244,7 @@ async function loadInitialData() {
       const { renderThemesExplorer } =
         await import("./components/themes-explorer.js");
       await renderThemesExplorer(themesContainer);
+      if (window.initLucideIcons) window.initLucideIcons(themesContainer);
       hideSkeleton("themes");
     }
 
@@ -233,6 +254,7 @@ async function loadInitialData() {
       const { renderRecordingDeepDive } =
         await import("./components/recording-deep-dive.js");
       await renderRecordingDeepDive(recordingContainer);
+      if (window.initLucideIcons) window.initLucideIcons(recordingContainer);
       hideSkeleton("recording");
     }
 
@@ -242,6 +264,7 @@ async function loadInitialData() {
       const { renderInteractiveExperience } =
         await import("./components/interactive-experience.js");
       await renderInteractiveExperience(interactiveContainer);
+      if (window.initLucideIcons) window.initLucideIcons(interactiveContainer);
       hideSkeleton("interactive");
     }
   } catch (error) {

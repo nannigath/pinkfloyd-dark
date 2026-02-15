@@ -30,12 +30,12 @@ export async function renderTrackExplorer(container) {
                   <h3 class="track-title">${track.title}</h3>
                   <span class="track-duration">${track.duration}</span>
                 </div>
-                <button 
+                <button
                   class="track-play-btn neo-button"
                   aria-label="Play ${track.title}"
                   data-track-id="${track.id}"
                 >
-                  <span class="play-icon">▶</span>
+                  <i data-lucide="play" class="play-icon"></i>
                 </button>
               </li>
             `,
@@ -55,6 +55,9 @@ export async function renderTrackExplorer(container) {
     `;
 
     container.innerHTML = html;
+
+    // Initialize Lucide icons in the container
+    if (window.initLucideIcons) window.initLucideIcons(container);
 
     // Set up event listeners
     setupTrackListEvents(container, tracks);
@@ -176,17 +179,17 @@ async function showTrackDetail(trackId, tracks) {
           track.trackNumber > 1
             ? `
           <button class="nav-btn neo-button" data-nav="prev" aria-label="Previous track">
-            ← Previous
+            <i data-lucide="chevron-left"></i> Previous
           </button>
         `
             : "<span></span>"
         }
-        
+
         ${
           track.trackNumber < tracks.length
             ? `
           <button class="nav-btn neo-button" data-nav="next" aria-label="Next track">
-            Next →
+            Next <i data-lucide="chevron-right"></i>
           </button>
         `
             : "<span></span>"
@@ -196,6 +199,9 @@ async function showTrackDetail(trackId, tracks) {
   `;
 
   detailContainer.innerHTML = html;
+
+  // Initialize Lucide icons in the detail container
+  if (window.initLucideIcons) window.initLucideIcons(detailContainer);
 
   // Set up audio player
   setupAudioPlayer(track);
@@ -241,7 +247,7 @@ function renderAudioPlayer(track) {
       
       <div class="audio-controls">
         <button class="audio-btn audio-btn--play neo-button" id="play-btn-${track.id}" aria-label="Play preview">
-          <span class="play-icon">▶</span>
+          <i data-lucide="play" class="play-icon"></i>
         </button>
         
         <div class="audio-progress">
@@ -256,6 +262,7 @@ function renderAudioPlayer(track) {
         </div>
         
         <button class="audio-btn neo-button" aria-label="Link to streaming" title="Listen on streaming services">
+          <i data-lucide="music"></i>
           <span>Stream</span>
         </button>
       </div>
@@ -318,7 +325,8 @@ function setupAudioPlayer(track) {
 
     if (isPlaying) {
       audio.pause();
-      playBtn.innerHTML = '<span class="play-icon">▶</span>';
+      playBtn.innerHTML = '<i data-lucide="play" class="play-icon"></i>';
+      if (window.initLucideIcons) window.initLucideIcons(playBtn); // Initialize the icon
       playBtn.setAttribute("aria-label", "Play preview");
       isPlaying = false;
     } else {
@@ -331,7 +339,8 @@ function setupAudioPlayer(track) {
       });
 
       audio.play();
-      playBtn.innerHTML = '<span class="pause-icon">⏸</span>';
+      playBtn.innerHTML = '<i data-lucide="pause" class="pause-icon"></i>';
+      if (window.initLucideIcons) window.initLucideIcons(playBtn); // Initialize the icon
       playBtn.setAttribute("aria-label", "Pause preview");
       isPlaying = true;
 
@@ -368,7 +377,7 @@ function setupAudioPlayer(track) {
     if (audio.currentTime >= 30) {
       audio.pause();
       audio.currentTime = 0;
-      playBtn.innerHTML = '<span class="play-icon">▶</span>';
+      playBtn.innerHTML = `<span class="play-icon">${NeoIcons.getIcon('play')}</span>`;
       playBtn.setAttribute("aria-label", "Play preview");
       isPlaying = false;
     }
@@ -376,7 +385,8 @@ function setupAudioPlayer(track) {
 
   // Reset when ended
   audio.addEventListener("ended", () => {
-    playBtn.innerHTML = '<span class="play-icon">▶</span>';
+    playBtn.innerHTML = '<i data-lucide="play" class="play-icon"></i>';
+    if (window.initLucideIcons) window.initLucideIcons(playBtn); // Initialize the icon
     playBtn.setAttribute("aria-label", "Play preview");
     progressBar.style.width = "0%";
     currentTimeEl.textContent = "0:00";

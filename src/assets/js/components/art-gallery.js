@@ -51,7 +51,7 @@ export async function renderArtGallery(container) {
                       <span class="placeholder-text">Image</span>
                     </div>
                     <div class="gallery-overlay">
-                      <span class="gallery-view-icon">View</span>
+                      <i data-lucide="eye" class="gallery-view-icon"></i>
                     </div>
                   </div>
                   <div class="gallery-item-info">
@@ -80,37 +80,37 @@ export async function renderArtGallery(container) {
       >
         <div class="lightbox-backdrop"></div>
         <div class="lightbox-content neo-flat">
-          <button 
-            class="lightbox-close neo-button" 
+          <button
+            class="lightbox-close neo-button"
             aria-label="Close image viewer"
             id="lightbox-close"
           >
-            ✕
+            <i data-lucide="x"></i>
           </button>
-          
-          <button 
-            class="lightbox-nav lightbox-prev neo-button" 
+
+          <button
+            class="lightbox-nav lightbox-prev neo-button"
             aria-label="Previous image"
             id="lightbox-prev"
           >
-            ←
+            <i data-lucide="chevron-left"></i>
           </button>
-          
+
           <div class="lightbox-image-container">
-            <img 
-              id="lightbox-image" 
-              src="" 
+            <img
+              id="lightbox-image"
+              src=""
               alt=""
               class="lightbox-image"
             >
           </div>
-          
-          <button 
-            class="lightbox-nav lightbox-next neo-button" 
+
+          <button
+            class="lightbox-nav lightbox-next neo-button"
             aria-label="Next image"
             id="lightbox-next"
           >
-            →
+            <i data-lucide="chevron-right"></i>
           </button>
           
           <div class="lightbox-info neo-concave">
@@ -124,6 +124,9 @@ export async function renderArtGallery(container) {
     `;
 
     container.innerHTML = html;
+
+    // Initialize Lucide icons in the container
+    if (window.initLucideIcons) window.initLucideIcons(container);
 
     // Set up gallery interactions
     setupGalleryInteractions(container);
